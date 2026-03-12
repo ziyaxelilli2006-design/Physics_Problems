@@ -1,39 +1,69 @@
-# Physics Problem: Rearranging Formulas
 
-## 1. Key Definitions and Formulas
 
-Before solving the problem, it is essential to understand the variables involved in the formula for a simple pendulum:
+## 4. Rearranging Formulas: The Simple Pendulum
 
-* **Period ($T$):** The time required for one complete cycle of oscillation (back and forth). It is typically measured in seconds ($s$).
-* **Length ($L$):** The distance from the pivot point to the center of mass of the pendulum bob. It is typically measured in meters ($m$).
-* **Acceleration due to Gravity ($g$):** The constant acceleration exerted by gravity on a free-falling object. On Earth, this is approximately $9.81 \, m/s^2$.
-* **The Pendulum Formula:**
-    $$T = 2\pi \sqrt{\frac{L}{g}}$$
+### The Theory: Period of a Pendulum
 
-## 2. Solving the Problem
+The formula provided is:
 
-**Task:** Rearrange the equation $T = 2\pi \sqrt{\frac{L}{g}}$ to solve for $g$.
 
-### Step-by-Step Derivation:
+$$T = 2\pi \sqrt{\frac{L}{g}}$$
 
-1.  **Start with the original formula:**
-    $$T = 2\pi \sqrt{\frac{L}{g}}$$
+* **$T$ (Period):** The time it takes for one full back-and-forth swing.
+* **$L$ (Length):** The length of the string.
+* **$g$ (Gravity):** The acceleration due to gravity.
+* **$2\pi$:** A constant representing the circular nature of the oscillation.
 
-2.  **Divide both sides by $2\pi$ to isolate the square root:**
-    $$\frac{T}{2\pi} = \sqrt{\frac{L}{g}}$$
+---
 
-3.  **Square both sides of the equation to remove the square root:**
-    $$\left(\frac{T}{2\pi}\right)^2 = \frac{L}{g}$$
+### Step-by-Step Rearrangement
 
-4.  **Distribute the square to the numerator and denominator:**
-    $$\frac{T^2}{4\pi^2} = \frac{L}{g}$$
+Our goal is to get **$g$** all by itself on one side of the equal sign. Think of this like "unwrapping" a gift—we have to remove the outer layers first.
 
-5.  **Multiply both sides by $g$ to move it out of the denominator:**
-    $$g \cdot \frac{T^2}{4\pi^2} = L$$
+#### Step 1: Remove the $2\pi$
 
-6.  **Multiply both sides by $\frac{4\pi^2}{T^2}$ (or divide by $\frac{T^2}{4\pi^2}$) to isolate $g$:**
-    $$g = \frac{4\pi^2 L}{T^2}$$
+The $2\pi$ is currently multiplied by the square root term. To move it, we do the opposite: **divide** both sides by $2\pi$.
 
-### Final Answer:
-The rearranged formula for the acceleration due to gravity is:
-$$g = \frac{4\pi^2 L}{T^2}$$
+
+$$\frac{T}{2\pi} = \sqrt{\frac{L}{g}}$$
+
+#### Step 2: Remove the Square Root
+
+The variable $g$ is trapped inside a square root. To "free" it, we must do the inverse operation: **square** both sides of the equation.
+
+
+$$\left(\frac{T}{2\pi}\right)^2 = \left(\sqrt{\frac{L}{g}}\right)^2$$
+
+
+This simplifies to:
+
+
+$$\frac{T^2}{4\pi^2} = \frac{L}{g}$$
+
+
+*(Note: Remember that when you square a fraction, you square both the numerator and the denominator.)*
+
+#### Step 3: Isolate $g$ (The "Flip")
+
+Currently, $g$ is in the denominator (the bottom). We need it in the numerator. We can achieve this by taking the **reciprocal** (flipping) of both sides:
+
+
+$$\frac{4\pi^2}{T^2} = \frac{g}{L}$$
+
+#### Step 4: Final Move
+
+To get $g$ completely alone, we need to move the $L$. Since $g$ is being divided by $L$, we **multiply** both sides by $L$:
+
+
+$$L \cdot \left(\frac{4\pi^2}{T^2}\right) = g$$
+
+---
+
+### Final Result
+
+The formula for $g$ is:
+
+
+$$\mathbf{g = \frac{4\pi^2 L}{T^2}}$$
+
+**Scientific Context:** This rearranged formula is exactly what geophysicists use in the field. By measuring the length of a pendulum and timing its swing precisely, they can calculate the local acceleration of gravity ($g$) to detect underground mineral deposits or oil, which slightly change the local gravitational pull.
