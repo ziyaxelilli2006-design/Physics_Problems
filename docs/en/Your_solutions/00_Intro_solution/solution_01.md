@@ -1,142 +1,169 @@
-Let's elevate the presentation with a highly structured, "Master Class" version of these solutions. I've broken each problem down into its **Core Concept**, **Step-by-Step Execution**, and **Final Result**, including visual cues to help you "see" the math.
+Welcome to **Section 1: Mechanics I**. We’re moving from pure math into the physical world—where things have mass, direction, and a tendency to hit the ground.
+
+Let's break these down step-by-step with a focus on how vectors and calculus describe reality.
 
 ---
 
-## 1. Vector Algebra
+## 1. Projectile Motion
 
-**The Setup:** We have $\vec{a} = [2, 1, -3]$ and $\vec{b} = [4, -2, 1]$.
+**Given:** $v_0 = 100 \text{ m/s}$, $\theta = 37^\circ$ ($\sin 37^\circ \approx 0.6$, $\cos 37^\circ \approx 0.8$).
 
-### a) Magnitudes (Length)
-
-Think of the magnitude as the "straight-line distance" from the start of the vector to its tip.
-
-* **For $|\vec{a}|$:** $\sqrt{2^2 + 1^2 + (-3)^2} = \sqrt{14} \approx \mathbf{3.74}$
-* **For $|\vec{b}|$:** $\sqrt{4^2 + (-2)^2 + 1^2} = \sqrt{21} \approx \mathbf{4.58}$
-
-### b) Dot Product ($\vec{a} \cdot \vec{b}$)
-
-The dot product measures how much one vector "overlaps" with another. It results in a single number (scalar).
-
-* **Calculation:** Multiply corresponding parts and sum them: $(2 \times 4) + (1 \times -2) + (-3 \times 1) = 8 - 2 - 3 = \mathbf{3}$
-
-### c) Cross Product ($\vec{a} \times \vec{b}$)
-
-This creates a new vector that is perfectly perpendicular to both original vectors.
-
-* **The Matrix:**
-
-$$\begin{vmatrix} \mathbf{i} & \mathbf{j} & \mathbf{k} \\ 2 & 1 & -3 \\ 4 & -2 & 1 \end{vmatrix}$$
+* **Differential Equations:**
+In a vacuum, gravity only acts vertically ($y$).
+* **Horizontal:** $\frac{d^2x}{dt^2} = 0$ (No acceleration).
+* **Vertical:** $\frac{d^2y}{dt^2} = -g$ (Constant acceleration downward).
 
 
-* **$x$-component:** $(1 \cdot 1) - (-3 \cdot -2) = 1 - 6 = -5$
-* **$y$-component:** $-[(2 \cdot 1) - (-3 \cdot 4)] = -(2 + 12) = -14$
-* **$z$-component:** $(2 \cdot -2) - (1 \cdot 4) = -4 - 4 = -8$
-* **Result:** $\mathbf{[-5, -14, -8]}$
+* **Initial Components:**
+* $v_{0x} = 100 \cos(37^\circ) = 80 \text{ m/s}$
+* $v_{0y} = 100 \sin(37^\circ) = 60 \text{ m/s}$
 
-### d) Angle between vectors
 
-* **Formula:** $\cos(\theta) = \frac{\vec{a} \cdot \vec{b}}{|\vec{a}| |\vec{b}|}$
-* **Calculation:** $\frac{3}{\sqrt{14} \cdot \sqrt{21}} \approx 0.175$
-* **Angle:** $\theta = \arccos(0.175) \approx \mathbf{79.9^\circ}$
+* **Time of Flight ($T$):**
+The projectile is in the air until $y = 0$. Using $y = v_{0y}t - \frac{1}{2}gt^2$:
+$0 = 60T - 5T^2 \implies 5T(12 - T) = 0$.
+**$T = 12 \text{ seconds}$.**
+* **Maximum Height ($H$):**
+Occurs when $v_y = 0$ (at $t = 6\text{s}$).
+$H = v_{0y}(6) - \frac{1}{2}g(6)^2 = 60(6) - 5(36) = 360 - 180 = \mathbf{180 \text{ meters}}$.
+* **Range ($R$):**
+The horizontal distance covered in $T=12\text{s}$.
+$R = v_{0x} \times T = 80 \times 12 = \mathbf{960 \text{ meters}}$.
 
 ---
 
-## 2. Systems of Equations
+## 2. Range Optimization
 
-**Equations:** (1) $2x + 3y = 12$ and (2) $x - y = 1$
-
-1. **Isolate:** From equation (2), isolate $x$: $x = y + 1$.
-2. **Substitute:** Plug this into equation (1): $2(y + 1) + 3y = 12$.
-3. **Expand and Combine:** $2y + 2 + 3y = 12 \rightarrow 5y = 10$.
-4. **Solve:** $y = 2$.
-5. **Finish:** If $y = 2$, then $x = 2 + 1 = 3$.
-**Solution Point:** $(3, 2)$
-
----
-
-## 3. Proportionality (Universal Gravity)
-
-**The Formula:** $F = G \frac{m_1 m_2}{r^2}$
-
-* **The Change:** Double the distance ($2r$) and halve both masses ($\frac{1}{2}m$).
-* **The Math:**
-
-$$F_{new} = G \frac{(\frac{1}{2} m_1)(\frac{1}{2} m_2)}{(2r)^2} = G \frac{\frac{1}{4} m_1 m_2}{4r^2} = \frac{1}{16} \cdot F_{original}$$
+**Goal:** Show $R$ is max at $45^\circ$.
+The range formula is $R(\theta) = \frac{v_0^2 \sin(2\theta)}{g}$.
+To find the maximum, we take the derivative with respect to $\theta$ and set it to zero:
 
 
-* **Result:** The force is reduced by a factor of **16**.
+$$\frac{dR}{d\theta} = \frac{v_0^2}{g} \cdot \cos(2\theta) \cdot 2 = 0$$
+
+
+For this to be zero, $\cos(2\theta) = 0$. The first positive angle where cosine is zero is $90^\circ$.
+$2\theta = 90^\circ \implies \mathbf{\theta = 45^\circ}$.
 
 ---
 
-## 4. Rearranging Formulas (Pendulum)
+## 3. Path Intersection (Alice & Bob)
 
-**Starting Formula:** $T = 2\pi \sqrt{\frac{L}{g}}$
+* **Alice:** $x_A = 2+t, y_A = 8-3t$
+* **Bob:** $x_B = 2t-1, y_B = 2t+2$
 
-1. **Remove the $2\pi$:** $\frac{T}{2\pi} = \sqrt{\frac{L}{g}}$
-2. **Remove the Root:** Square both sides: $\frac{T^2}{4\pi^2} = \frac{L}{g}$
-3. **Isolate $g$:** $g = \frac{4\pi^2 L}{T^2}$
+**Do they collide?** (Same place, same time $t$):
 
----
+1. Set $x_A = x_B$: $2+t = 2t-1 \implies \mathbf{t = 3}$.
+2. Check $y$ at $t=3$:
+* Alice: $y_A = 8 - 3(3) = -1$.
+* Bob: $y_B = 2(3) + 2 = 8$.
+Since $-1 \neq 8$, they **do not collide**.
 
-## 5. Trigonometry (Vector Components)
 
-**Vector:** Magnitude $15$ at $60^\circ$ to the horizontal.
 
-* **Horizontal ($A_x$):** $15 \cdot \cos(60^\circ) = 15 \cdot 0.5 = \mathbf{7.5}$
-* **Vertical ($A_y$):** $15 \cdot \sin(60^\circ) = 15 \cdot \frac{\sqrt{3}}{2} \approx \mathbf{12.99}$
-
----
-
-## 6. Function Analysis
-
-**Function:** $f(x) = 3x^2 - 12x + 7$
-
-1. **Find the Slope ($f'$):** $f'(x) = 6x - 12$.
-2. **Set to Zero:** $6x - 12 = 0 \rightarrow x = 2$.
-3. **Identify Point Type:** The second derivative is $f''(x) = 6$ (Positive = Smile = Minimum).
-4. **Find the Coordinate:** $f(2) = 3(4) - 24 + 7 = -5$.
-**Local Minimum:** $(2, -5)$
+**Do the paths intersect?** (Same place, different times $t_1, t_2$):
+Solve $2+t_1 = 2t_2-1$ and $8-3t_1 = 2t_2+2$.
+From the first: $t_1 = 2t_2 - 3$.
+Substitute into second: $8 - 3(2t_2 - 3) = 2t_2 + 2 \implies 8 - 6t_2 + 9 = 2t_2 + 2 \implies 15 = 8t_2 \implies t_2 = 1.875$.
+Then $t_1 = 2(1.875) - 3 = 0.75$.
+**The paths intersect** at the coordinates $(2.75, 5.75)$.
 
 ---
 
-## 7. Logic & Series (The Fly and the Bike)
+## 4. Vector Calculus
 
-**The Scenario:** Bicycle moves at 1 m/s across 10m. Fly flies at 2 m/s back and forth.
+**Position:** $\vec{r}(t) = (3t^2)\hat{i} + (5t - 8t^2)\hat{j}$
 
-1. **The Trick:** Ignore the back-and-forth turns! Simply ask: *How long is the fly flying?*
-2. **Time:** The bike reaches the wall in $10\text{ m} \div 1\text{ m/s} = 10\text{ seconds}$.
-3. **Fly Distance:** The fly flies for 10 seconds at 2 m/s.
-**Distance:** $2\text{ m/s} \times 10\text{ s} = \mathbf{20\text{ meters}}$.
-
----
-
-## 8. Definite Integrals
-
-**The Problem:** Area under $\sin(x)$ from $0$ to $\pi$.
-
-1. **The Integral:** $\int_{0}^{\pi} \sin(x) dx = [-\cos(x)]_{0}^{\pi}$
-2. **Evaluation:** $(-\cos(\pi)) - (-\cos(0)) = (-(-1)) - (-1) = 1 + 1 = \mathbf{2}$.
+* **Velocity ($\vec{v} = \frac{d\vec{r}}{dt}$):** Differentiate each component:
+$\mathbf{\vec{v}(t) = (6t)\hat{i} + (5 - 16t)\hat{j}}$
+* **Acceleration ($\vec{a} = \frac{d\vec{v}}{dt}$):**
+Differentiate velocity:
+$\mathbf{\vec{a}(t) = (6)\hat{i} + (-16)\hat{j}}$
 
 ---
 
-## 9. Optimization
+## 5. Relative Velocity
 
-**Area of rectangle** under $y = 3 - x^2$ in the first quadrant.
+* $v_{river} = 2 \text{ m/s (East)}$
+* $v_{boat/water} = 5 \text{ m/s}$
+* **Target:** Resultant velocity must be due North ($x$-component = 0).
 
-1. **Area Function:** $A = x \cdot y = x(3 - x^2) = 3x - x^3$.
-2. **Maximize:** Take the derivative $A'(x) = 3 - 3x^2$ and set to zero.
-3. **Solve:** $3x^2 = 3 \rightarrow x = 1$.
-4. **Find height:** $y = 3 - (1)^2 = 2$.
-**Optimal Dimensions:** $1 \times 2$
+Let the boat head at angle $\phi$ West of North.
+$x$-component: $5 \sin(\phi) = 2 \implies \sin(\phi) = 0.4$.
+**Angle:** $\phi = \arcsin(0.4) \approx \mathbf{23.6^\circ \text{ West of North}}$.
+
+**Crossing time:** Use the Northward component of speed.
+$v_{north} = 5 \cos(23.6^\circ) \approx 4.58 \text{ m/s}$.
+$t = \frac{200 \text{ m}}{4.58 \text{ m/s}} \approx \mathbf{43.6 \text{ seconds}}$.
 
 ---
 
-## 10. Infinite Series
+## 6. Variable Velocity
 
-**The Ant's Final Position:**
+$v(t) = t^2 + 2t - 5$, $x(0) = 4$.
 
-1. **Horizontal ($x$):** $1 - \frac{1}{3} + \frac{1}{5} - \dots$ This is the Leibniz formula for **$\frac{\pi}{4}$**.
-2. **Vertical ($y$):** $\frac{1}{2} - \frac{1}{4} + \frac{1}{6} - \dots$ This is half of the alternating harmonic series ($\ln(2)$), giving **$\frac{\ln(2)}{2}$**.
-**Coordinate:** $(\approx 0.785, \approx 0.347)$
+* **Acceleration at $t=3$:**
+$a(t) = \frac{dv}{dt} = 2t + 2$.
+$a(3) = 2(3) + 2 = \mathbf{8 \text{ m/s}^2}$.
+* **Position at $t=3$:**
+$x(t) = \int (t^2 + 2t - 5) dt = \frac{1}{3}t^3 + t^2 - 5t + C$.
+Since $x(0) = 4$, then $C = 4$.
+$x(3) = \frac{1}{3}(27) + (9) - 5(3) + 4 = 9 + 9 - 15 + 4 = \mathbf{7}$.
 
-Would you like me to create a visual cheatsheet with these formulas that you can save for future reference?
+---
+
+## 7. Elimination of Time
+
+$x = 2t^2, y = 3t^3$
+
+* **Trajectory:** $t = \sqrt{x/2}$. Substitute into $y$:
+$\mathbf{y = 3(x/2)^{3/2}}$ or $y^2 = \frac{27}{8}x^3$.
+* **Vectors:**
+* $\vec{v}(t) = (4t)\hat{i} + (9t^2)\hat{j} \implies |\vec{v}| = \sqrt{16t^2 + 81t^4}$
+* $\vec{a}(t) = (4)\hat{i} + (18t)\hat{j} \implies |\vec{a}| = \sqrt{16 + 324t^2}$
+
+
+* **Is acceleration constant?**
+**No**, the $\hat{j}$ component ($18t$) depends on time.
+
+---
+
+## 8. Circular Motion
+
+**Equator Centripetal Acceleration:** $a_c = \omega^2 R$.
+
+* $R = 6.378 \times 10^6 \text{ m}$.
+* $\omega = \frac{2\pi}{24 \times 3600} \approx 7.27 \times 10^{-5} \text{ rad/s}$.
+* $a_c = (7.27 \times 10^{-5})^2 \times (6.378 \times 10^6) \approx \mathbf{0.034 \text{ m/s}^2}$.
+(This is why you weigh slightly less at the equator!)
+
+---
+
+## 9. Momentum Comparison
+
+$p = mv$ (Convert mass to kg!)
+
+* **Fly:** $0.002 \text{ kg} \times 10 \text{ m/s} = \mathbf{0.02 \text{ kg}\cdot\text{m/s}}$.
+* **Tennis Ball:** $0.060 \text{ kg} \times 1 \text{ m/s} = \mathbf{0.06 \text{ kg}\cdot\text{m/s}}$.
+The **tennis ball** has greater momentum.
+
+---
+
+## 10. Kinematics (The Helix)
+
+$\vec{r}(t) = (a \cos(\omega t), b \sin(\omega t), bt)$
+
+a) **Trajectory:** In the $xy$-plane: $(\frac{x}{a})^2 + (\frac{y}{b})^2 = \cos^2(\omega t) + \sin^2(\omega t) = 1$.
+This is an **elliptical cylinder**. Since $z = bt$ increases linearly, the path is an **elliptical helix**.
+
+b) **Path Length ($s$):**
+$v_x = -a\omega \sin(\omega t), v_y = b\omega \cos(\omega t), v_z = b$.
+$|\vec{v}| = \sqrt{a^2\omega^2\sin^2(\omega t) + b^2\omega^2\cos^2(\omega t) + b^2}$.
+If $a=b$, $|\vec{v}| = \sqrt{a^2\omega^2 + a^2} = a\sqrt{\omega^2+1}$ (Constant).
+$s = \int_0^{t_0} |\vec{v}| dt$.
+
+c) **Interactive Trajectory:**
+If $a=b$, it’s a standard circular helix. If $a \neq b$, it's "squashed."
+
+Would you like me to write the Python code to visualize this elliptical helix for you?
